@@ -1,0 +1,12 @@
+<%= form_for :big_url do |f| %>
+
+    <div class="field">
+        <%= f.label :url_field, t('home.url_input_field') %>:
+        <%= f.text_field :vc_real_url %><br />
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+<% end %>
