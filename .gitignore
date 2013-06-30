@@ -14,3 +14,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+#Ignore .idea files
+/.idea/*.iws
+/.idea/workspace.xml
+/.idea/tasks.xml

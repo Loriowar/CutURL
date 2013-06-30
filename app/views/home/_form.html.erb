@@ -1,12 +1,18 @@
 <%= form_for :big_url do |f| %>
 
-    <div class="field">
-        <%= f.label :url_field, t('home.url_input_field') %>:
-        <%= f.text_field :vc_real_url %><br />
-    </div>
+    <table>
+      <tr>
+        <td class="label"><%= f.label :url_input, t('home.url_input') %>:</td>
+        <td class="field"><%= f.text_field :vc_real_url %></td>
+      </tr>
+      <tr>
+        <td class="label"><%= f.label :url_alias, t('home.url_alias') %>:</td>
+        <td class="field"><%= f.text_field :vc_short_url %></td>
+      </tr>
+    </table>
 
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit t('home.submit') %>
     </div>
 
 <% end %>

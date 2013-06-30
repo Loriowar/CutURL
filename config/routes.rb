@@ -6,7 +6,7 @@ CutURL::Application.routes.draw do
 
   post "/" => "home#create"
 
-  get '/:vc_short_url' => 'home#redirect_to_url'
+  get '/:vc_short_url' => 'home#redirect_to_big_url'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

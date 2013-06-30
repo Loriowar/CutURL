@@ -23,4 +23,6 @@ en:
   hello: "Hello world"
 
   home:
-    url_input_field: Input url for cut
+    url_input: Input url for cut
+    url_alias: Input short alias for url
+    submit: Cut
