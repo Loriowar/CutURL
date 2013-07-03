@@ -5,3 +5,7 @@ form_element.replaceWith("<%= escape_javascript(render :partial => "form", objec
 // Update error message
 error_element = jQuery('#errors_explanation');
 error_element.replaceWith("<%= escape_javascript(render :partial => "errors_explanation", object: @big_url) %>");
+
+// Update link notification
+note_element = jQuery('#link_notification');
+note_element.replaceWith("<%= escape_javascript(render :partial => "link_notification") %>");

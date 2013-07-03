@@ -33,6 +33,10 @@ en:
     messages:
       wrong_format: has wrong format
 
+  notice:
+    title: Notification
+    success_messge: Url successfully cut
+
   big_urls_table:
     columns:
       n_big_url_id: ID

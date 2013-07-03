@@ -1,3 +1,8 @@
 <div class="link_notification" id="link_notification">
-  <div class="flash_notification" id="flash_link_notification" style="display:none"></div>
+  <div class="flash_notification" id="flash_link_notification">
+    <% if flash[:notice].present? %>
+      <h3><%= t(:'notice.success_messge') %></h3>
+        <li class="itemize"> <%= flash[:notice] %> </li>
+    <% end %>
+  </div>
 </div>

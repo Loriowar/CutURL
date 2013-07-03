@@ -3,11 +3,13 @@ class HomeController < BaseController
   def create
     @big_url = BigUrl.create(params[:big_url])
 
-    # Clear variable after success save
     unless @big_url.errors.any?
+      # Fill notice with result url
+      flash.now[:notice] = 'http://' << (request.host == 'localhost' ? request.host_with_port : request.host) << '/' << @big_url.vc_short_url
+      # Clear variable after success save
       @big_url = nil
     end
-    #TODO create message about success and error
+
     respond_to do |format|
       format.js
     end
