@@ -1,3 +1,24 @@
-<h1>Welcome to CurURL service</h1>
+<h1><%= t(:'home.title') %></h1>
 
+<%= render 'errors_explanation' %>
 <%= render 'form' %>
+<%= render 'link_notification' %>
+
+<div class="help_list">
+  <div class="help_item">
+    <div class="content">
+      <ul class="child_list_wm_trans">
+      </ul><ul class="child_list">
+    </ul><ul class="child_list">
+      <li id="about" class="child">
+        <div class="title" onclick="$(this).siblings('.content1').slideToggle('fast'); return false"><a class="pseudo_link" onclick="return false;" href="/help/return/who-pays/" ><span>И другие..</span>
+        </a></div>
+
+        <div class="content1 text">***Суда можно вставить текст, и картинки
+          <img src="http://vladtimoshenko.com/wp-content/uploads/2012/06/.." alt="Как сделать разворачивающийся текст HTML/CSS." />
+        </div></li>
+    </ul>
+
+    </div>
+  </div>
+</div>

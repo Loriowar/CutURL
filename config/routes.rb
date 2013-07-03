@@ -1,6 +1,6 @@
 CutURL::Application.routes.draw do
 
-  resources :base
+  # resources :base
 
   root 'home#index'
 

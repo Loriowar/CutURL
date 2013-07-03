@@ -23,6 +23,18 @@ en:
   hello: "Hello world"
 
   home:
+    title: Welcome to CurURL service
     url_input: Input url for cut
     url_alias: Input short alias for url
     submit: Cut
+
+  error:
+    title: During cutting occur some error
+
+  big_urls_table:
+    columns:
+      n_big_url_id: ID
+      vc_real_url: Url for cut
+      vc_short_url: Alias
+      vc_rem: Comment
+      d_create: Create date
