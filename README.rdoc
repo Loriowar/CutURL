@@ -1,3 +1,5 @@
 == README
 
 This is simple project for cuting url.
+
+Sometime this add available on cuturl.herokuapp.com
