@@ -81,7 +81,7 @@ class BigUrl < Base
     if vc_real_url =~ /^((http|https|ftp)\:\/\/)?[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\:[a-zA-Z0-9]*)?\/?([a-zA-Z0-9\-\._\?\,\'\/\\+\&\%\$\#\=\~])*$/ || vc_real_url.blank?
       true
     else
-      errors.add(:vc_real_url, 'has wrong format')
+      errors.add(:vc_real_url, I18n.t(:'errors.messages.wrong_format'))
       false
     end
   end

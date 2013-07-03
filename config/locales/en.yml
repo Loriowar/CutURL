@@ -28,8 +28,10 @@ en:
     url_alias: Input short alias for url
     submit: Cut
 
-  error:
+  errors:
     title: During cutting occur some error
+    messages:
+      wrong_format: has wrong format
 
   big_urls_table:
     columns:
@@ -38,3 +40,10 @@ en:
       vc_short_url: Alias
       vc_rem: Comment
       d_create: Create date
+
+  activerecord:
+    errors:
+      messages:
+        blank: can't be blank
+        too_long: is too long (maximum is %{count} characters)
+        taken: has already been taken
