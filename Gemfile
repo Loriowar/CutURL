@@ -4,7 +4,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
+
+# For heroku using PostgreSQL
+gem 'pg'
 
 # Use I18n for locales
 gem 'i18n'
