@@ -1,7 +1,5 @@
 CutURL::Application.routes.draw do
 
-  # resources :base
-
   root 'home#index'
 
   post "/" => "home#create"
