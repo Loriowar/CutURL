@@ -20,7 +20,6 @@ class HomeController < BaseController
     if @big_url.present?
       redirect_to @big_url.vc_real_url
     else
-      #TODO change 404 page
       not_found
     end
   end
