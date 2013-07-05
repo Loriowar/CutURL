@@ -33,6 +33,8 @@ en:
     title: During cutting occur some error
     messages:
       wrong_format: has wrong format
+      contain_spaces: contain space charecter(s)
+      recursion_probability: Detect recursion probability. Please, change alias
 
   notice:
     title: Notification

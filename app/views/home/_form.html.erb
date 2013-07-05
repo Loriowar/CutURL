@@ -16,7 +16,7 @@
 
       </table>
 
-      <div class="toggle_content" style="display: none;">
+      <div class="toggle_content" <%unless @big_url.present? && @big_url.vc_short_url.present?%> style="display: none;" <% end %> >
         <table>
           <tr class="input_row">
             <td class="label">

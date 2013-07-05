@@ -3,7 +3,11 @@
       <h2><%= t(:'errors.title') %>:</h2>
       <%@big_url.errors.messages.reject{|key, val| val.blank?}.each do |obj_name, messages| %>
           <%messages.each do  |message| %>
-            <li class="itemize"><%= t(:"big_urls_table.columns.#{obj_name}") << ' ' << message %></li>
+            <% if obj_name != :empty %>
+              <li class="itemize"><%= t(:"big_urls_table.columns.#{obj_name}") << ' ' << message %></li>
+            <% else %>
+              <li class="itemize"><%= message %></li>
+            <% end %>
           <% end %>
       <% end %>
     <% end %>

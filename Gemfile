@@ -7,7 +7,13 @@ gem 'rails', '4.0.0'
 # gem 'sqlite3'
 
 # For heroku using PostgreSQL
-gem 'pg'
+group :prodution do
+  gem 'pg'
+end
+
+group :test do
+  gem 'sqlite3'
+end
 
 # Use I18n for locales
 gem 'i18n'
@@ -20,6 +26,7 @@ gem 'activerecord'
 # Use for debug in development
 group :development do
   gem 'pry'
+  gem 'sqlite3'
 end
 
 # Use SCSS for stylesheets

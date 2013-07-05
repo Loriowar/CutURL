@@ -6,7 +6,8 @@ class BigUrl < Base
                   :vc_rem,
                   :d_create
 
-  after_initialize :init_default
+  after_initialize :init_default,
+                   :remove_spaces
 
   before_save :prepare_alias,
               :fix_real_url
@@ -18,7 +19,9 @@ class BigUrl < Base
   validates_length_of :vc_short_url, :maximum => 16
   validates_length_of :vc_real_url,  :maximum => 2000
 
-  validate :check_url_format
+  validate :check_url_format,
+           :check_alias_format,
+           :check_recursion
 
 
   #Class methods
@@ -86,9 +89,29 @@ class BigUrl < Base
     end
   end
 
+  def check_alias_format
+    if vc_short_url.include? ' '
+      errors.add(:vc_short_url, I18n.t(:'errors.messages.contain_spaces'))
+      false
+    else
+      true
+    end
+  end
+
+  def check_recursion
+    if vc_real_url.split('/').last == vc_short_url
+      errors.add(:empty, I18n.t(:'errors.messages.recursion_probability'))
+    end
+  end
+
   # Initialize default values for record
   def init_default
     self.d_create ||= DateTime.now
+  end
+
+  # Remove all space charecters from real url
+  def remove_spaces
+    self.vc_real_url = vc_real_url.gsub(' ', '')
   end
 
 end
