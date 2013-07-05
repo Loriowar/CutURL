@@ -29,6 +29,10 @@ en:
     submit: Cut
     additional_options: Additional options
 
+  common:
+    messages:
+      go_home: Return to main
+
   errors:
     title: During cutting occur some error
     messages:
@@ -39,6 +43,11 @@ en:
   notice:
     title: Notification
     success_messge: Url successfully cut
+
+  not_found:
+    title: Oops!
+    message: Cant find url for this alias.
+    advice: Maybe you misplace in alias? Or maybe url is delete from server.
 
   big_urls_table:
     columns:
