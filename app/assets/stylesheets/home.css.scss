@@ -17,16 +17,38 @@
   }
 }
 
-.actions{
+.actions {
   margin: 10px;
 }
 
-.toggle_content{
+.toggle_content {
 
 }
 
-tr.input_row{
+tr.input_row {
+  line-height: 30px;
+
   .label{
     width: 160px;
   }
+}
+
+input[type=text] {
+  border-radius: 5px;
+  padding: 3px;
+  border-style: ridge;
+}
+
+.border_red {
+  border-color: salmon;
+  border-width: 4px;
+}
+
+.border_green {
+  border-color: greenyellow;
+  border-width: 4px;
+}
+
+input:focus {
+  outline: 0;
 }

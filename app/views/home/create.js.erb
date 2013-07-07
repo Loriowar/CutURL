@@ -1,11 +1,20 @@
 // Update input form
-form_element = jQuery('#main_form');
-form_element.replaceWith("<%= escape_javascript(render :partial => "form", object: @big_url) %>");
+<% if params[:check_alias].blank? %>
+    form_element = jQuery('#main_form');
+    form_element.replaceWith("<%= escape_javascript(render :partial => "form", object: @big_url) %>");
 
-// Update error message
-error_element = jQuery('#errors_explanation');
-error_element.replaceWith("<%= escape_javascript(render :partial => "errors_explanation", object: @big_url) %>");
+    // Update error message
+    error_element = jQuery('#errors_explanation');
+    error_element.replaceWith("<%= escape_javascript(render :partial => "errors_explanation", object: @big_url) %>");
 
-// Update link notification
-note_element = jQuery('#link_notification');
-note_element.replaceWith("<%= escape_javascript(render :partial => "link_notification") %>");
+    // Update link notification
+    note_element = jQuery('#link_notification');
+    note_element.replaceWith("<%= escape_javascript(render :partial => "link_notification") %>");
+<% else %>
+    jQuery('input#big_url_vc_short_url').removeClass('border_red').removeClass('border_green')
+    <% if @alias_exist %>
+        jQuery('input#big_url_vc_short_url').addClass('border_red')
+    <% elsif params[:vc_short_url].present? && !@alias_exist %>
+        jQuery('input#big_url_vc_short_url').addClass('border_green')
+    <% end %>
+<% end %>

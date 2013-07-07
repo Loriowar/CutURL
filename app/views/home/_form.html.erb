@@ -20,11 +20,16 @@
         <table>
           <tr class="input_row">
             <td class="label">
-              <%= f.label :url_alias, t('home.url_alias') %>:</td>
+              <%= f.label :url_alias, t('home.url_alias') %>:
+            </td>
             <td class="field"><%= f.text_field :vc_short_url,
                                                placeholder: 'Your alias for URL',
                                                size: 19,
-                                               value: @big_url.present? ? @big_url.vc_short_url : '' %></td>
+                                               value: @big_url.present? ? @big_url.vc_short_url : '' %>
+            </td>
+            <td>
+              <button id="check_alias_btn" type="button">Check alias</button>
+            </td>
           </tr>
         </table>
 
@@ -46,4 +51,10 @@
       </div>
 
     <% end %>
+
+  <script>
+    <% #TODO make preaty class for change button %>
+    bindClickEvent('check_alias_btn', 'big_url_vc_short_url');
+    bindChangeEvent('big_url_vc_short_url');
+  </script>
 </div>
