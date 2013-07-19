@@ -42,6 +42,7 @@ ru:
     messages:
       wrong_format: имеет неверный формат
       contain_spaces: содержит символы пробела
+      contain_wrong_charecters: допускает содержание только цифровых и буквенных символов
       recursion_probability: Обнаружена потенциальная возможность рекурсии. Пожалуйста, изменить псевдоним
 
   notice:

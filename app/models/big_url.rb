@@ -93,6 +93,9 @@ class BigUrl < Base
     if vc_short_url.include? ' '
       errors.add(:vc_short_url, I18n.t(:'errors.messages.contain_spaces'))
       false
+    elsif vc_short_url =~ /[^a-zA-Z0-9]/
+      errors.add(:vc_short_url, I18n.t(:'errors.messages.contain_wrong_charecters'))
+      false
     else
       true
     end

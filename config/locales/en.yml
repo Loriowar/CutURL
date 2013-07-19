@@ -42,6 +42,7 @@ en:
     messages:
       wrong_format: has wrong format
       contain_spaces: contain space charecter(s)
+      contain_wrong_charecters: must contain only leters and numbers
       recursion_probability: Detect recursion probability. Please, change alias
 
   notice:
