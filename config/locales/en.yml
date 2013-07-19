@@ -28,6 +28,10 @@ en:
     url_alias: Input short alias for url
     submit: Cut
     additional_options: Additional options
+    check_alias_btn: Check alias
+    placeholder:
+      vc_real_url: Your URL
+      vc_short_url: Your alias for URL
 
   common:
     messages:
