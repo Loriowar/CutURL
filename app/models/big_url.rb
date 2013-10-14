@@ -4,7 +4,8 @@ class BigUrl < Base
                   :vc_real_url,
                   :vc_short_url,
                   :vc_rem,
-                  :d_create
+                  :d_create,
+                  :d_expire
 
   after_initialize :init_default,
                    :remove_spaces
@@ -42,6 +43,11 @@ class BigUrl < Base
       BigUrl.all.each do |rec|
         rec.delete
       end
+    end
+
+    # Delete expired records
+    def delete_expired
+      BigUrl.where("d_expire < :cur_date", cur_date: DateTime.now).destroy_all
     end
 
     # Simple alternative for SecureRandom
@@ -110,6 +116,7 @@ class BigUrl < Base
   # Initialize default values for record
   def init_default
     self.d_create ||= DateTime.now
+    self.d_expire ||= DateTime.now + 1.week
   end
 
   # Remove all space charecters from real url

@@ -16,6 +16,12 @@
 /tmp
 
 # Ignore .idea files
-/.idea/*.iws
-/.idea/workspace.xml
-/.idea/tasks.xml
+#/.idea/*.iws
+#/.idea/workspace.xml
+#/.idea/tasks.xml
+
+# Temporary ingon idea folder
+/.idea/
+
+# Ignore metafile from database
+/*.rdb

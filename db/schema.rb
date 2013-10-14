@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130629121206) do
+ActiveRecord::Schema.define(version: 20131013065555) do
 
   create_table "big_urls", primary_key: "n_big_url_id", force: true do |t|
     t.string   "vc_real_url",  limit: 2000
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20130629121206) do
     t.date     "d_create"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "d_expire",                  default: '2013-10-20'
   end
 
 end

@@ -1,0 +1,5 @@
+erase_old_records:
+  cron: "0 3 * * *"
+  class: EraseOldRecords
+  args:
+  description: “erase old records in 3 hours of night”
