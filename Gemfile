@@ -55,6 +55,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# Web app statistic from NewRelic
+gem 'newrelic_rpm'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
