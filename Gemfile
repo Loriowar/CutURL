@@ -55,6 +55,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# Use bootstrap as css proider
+gem 'bootstrap-sass'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

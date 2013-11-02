@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails CutURL: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="3334c5e0-f4b4-4d74-9725-3844ec1b1a1f">
+    <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+    <jdbc-url>jdbc:postgresql://127.0.0.1:5432/cuturl_production</jdbc-url>
+    <user-name>foo</user-name>
+    <user-password>dfc8dfcbdfd8</user-password>
+    <libraries>
+      <library>
+        <url>file://</url>
+      </library>
+    </libraries>
+  </data-source>
+  <data-source source="LOCAL" name="Rails CutURL: development" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="82a5d9da-c17c-4c6b-8254-2132dc216b54">
+    <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+    <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
+    <libraries>
+      <library>
+        <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/xerial-sqlite-license.txt</url>
+      </library>
+      <library>
+        <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/sqlite-jdbc-3.7.2.jar</url>
+      </library>
+    </libraries>
+    <schema name="" catalog=""/>
+    <table name="big_urls" schema="" catalog="" type="TABLE">
+      <column name="n_big_url_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="vc_real_url" sqlType="VARCHAR(2000)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="vc_short_url" sqlType="VARCHAR(16)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="vc_rem" sqlType="VARCHAR(500)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="d_create" sqlType="DATE" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="updated_at" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="d_expire" sqlType="DATE" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="n_big_url_id"/>
+    </table>
+    <table name="schema_migrations" schema="" catalog="" type="TABLE">
+      <column name="version" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <index name="unique_schema_migrations" unique="true" columns="version"/>
+    </table>
+    <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
+      <column name="name" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="seq" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+    </table>
+  </data-source>
+</component>

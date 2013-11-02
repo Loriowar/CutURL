@@ -1,5 +1,6 @@
-<div class="errors_explanation" id="errors_explanation">
-    <% if @big_url.present? && @big_url.errors.any? %>
+<% message_present = @big_url.present? && @big_url.errors.any? %>
+<div class="errors_explanation alert alert-error<%= " hidden" unless message_present %>" id="errors_explanation">
+    <% if message_present %>
       <h2><%= t(:'errors.title') %>:</h2>
       <%@big_url.errors.messages.reject{|key, val| val.blank?}.each do |obj_name, messages| %>
           <%messages.each do  |message| %>

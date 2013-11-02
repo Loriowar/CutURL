@@ -1,7 +1,10 @@
-<div class="not_found">
+<%= stylesheet_link_tag "not_found", media: "all", "data-turbolinks-track" => true %>
+
+<div class="not_found hero-unit">
 <h1> <%= t(:'not_found.title') %> </h1>
-<h2> <%= t(:'not_found.message') %> </h2>
-<h3> <%= t(:'not_found.advice') %> </h3>
-<a class="link_to_home" href="<%= url_for :root %>"> <= <%= t(:'common.messages.go_home') %> </a>
+<h3> <%= t(:'not_found.message') %> </h2>
+<h2> <%= t(:'not_found.advice') %> </h3>
+<a class="link_to_home btn btn-primary" href="<%= url_for :root %>">
+  <i class="icon-white icon-arrow-left"></i> <%= t(:'common.messages.go_home') %> </a>
 </div>
 
