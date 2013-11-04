@@ -26,14 +26,23 @@ CutURL::Application.configure do
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
+  # Required for Heroku
+  config.assets.initialize_on_precompile = false
+
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
   # Generate digests for assets URLs.
   config.assets.digest = true
 
+  # Enable the asset pipeline
+  config.assets.enabled = true
+
   # Version of your assets, change this if you want to expire all your assets.
   config.assets.version = '1.0'
+
+  # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+  config.assets.precompile += %w(application_fix.css not_found.css )
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
