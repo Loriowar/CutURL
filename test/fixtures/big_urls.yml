@@ -1,7 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  real_url: MyString
+go:
+  vc_real_url: "http://www.google.ru"
+  vc_short_url: "goo"
+  d_create: <%= DateTime.now.to_date %>
 
-two:
-  real_url: MyString
+ya:
+  vc_real_url: "http://www.yandex.ru"
+  vc_short_url: "ya"
+  d_create: <%= 8.days.ago.to_date %>
