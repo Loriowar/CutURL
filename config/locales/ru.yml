@@ -27,7 +27,7 @@ ru:
     url_input: Ссылка для укорочения
     url_alias: Псевдоним для ссылки
     submit: Укоротить
-    additional_options: Дополнительные параметры
+    additional_options: "Дополнительные параметры..."
     check_alias_btn: Проверить
     placeholder:
           vc_real_url: Ваша ссылка

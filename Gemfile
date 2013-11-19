@@ -13,6 +13,8 @@ end
 
 group :test do
   gem 'sqlite3'
+  gem 'capybara'
+  gem 'selenium-webdriver'
 end
 
 # Use I18n for locales

@@ -7,29 +7,41 @@
 
       <table>
         <tr class="input_row">
-          <td class="simple_label"><%= f.label :url_input, t('home.url_input') %></td>
-          <td class="field"><%= f.text_field :vc_real_url,
-                                             placeholder: t(:'home.placeholder.vc_real_url'),
-                                             size: 100,
-                                             value: @big_url.present? ? @big_url.vc_real_url : '',
-                                             class: 'input-xxlarge'%></td>
+          <td class="simple_label">
+            <%= f.label :url_input, t('home.url_input') %>
+          </td>
+          <td class="field">
+            <%= f.text_field :vc_real_url,
+                placeholder: t(:'home.placeholder.vc_real_url'),
+                size:        100,
+                value:       @big_url.present? ? @big_url.vc_real_url : '',
+                class:       'input-xxlarge'%>
+          </td>
         </tr>
 
       </table>
 
-      <div class="toggle_content" <%unless @big_url.present? && @big_url.vc_short_url.present?%> style="display: none;" <% end %> >
+      <div class="toggle_content"
+           <%unless @big_url.present? && @big_url.vc_short_url.present?%>
+               style="display: none;"
+           <% end %> >
         <table>
           <tr class="input_row">
             <td class="simple_label">
               <%= f.label :url_alias, t('home.url_alias') %>
             </td>
-            <td class="field"><%= f.text_field :vc_short_url,
-                                               placeholder: t(:'home.placeholder.vc_short_url'),
-                                               size: 19,
-                                               value: @big_url.present? ? @big_url.vc_short_url : '' %>
+            <td class="field">
+              <%= f.text_field :vc_short_url,
+                  placeholder: t(:'home.placeholder.vc_short_url'),
+                  size:        19,
+                  value:       @big_url.present? ? @big_url.vc_short_url : '' %>
             </td>
             <td class="check_button">
-              <button id="check_alias_btn" class="btn btn-info" type="button"> <%= t(:'home.check_alias_btn') %> </button>
+              <button id="check_alias_btn"
+                      class="btn btn-info"
+                      type="button">
+                <%= t(:'home.check_alias_btn') %>
+              </button>
             </td>
           </tr>
         </table>
@@ -38,11 +50,12 @@
 
       <div class="slide_toggle"
            onclick="jQuery('.toggle_content').slideToggle('fast'); return false">
-        <a class="pseudo_link"
+        <a id="addition_options_toogle"
+           class="pseudo_link"
            onclick="return false;"
            href="#" >
           <span>
-            <%= t(:'home.additional_options') %>...
+            <%= t(:'home.additional_options') %>
           </span>
         </a>
       </div>

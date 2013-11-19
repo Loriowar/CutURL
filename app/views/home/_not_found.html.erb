@@ -4,7 +4,9 @@
 <h1> <%= t(:'not_found.title') %> </h1>
 <h3> <%= t(:'not_found.message') %> </h2>
 <h2> <%= t(:'not_found.advice') %> </h3>
-<a class="link_to_home btn btn-primary" href="<%= url_for :root %>">
+<a id="link_to_home"
+   class="link_to_home btn btn-primary"
+   href="<%= url_for :root %>">
   <i class="icon-white icon-arrow-left"></i> <%= t(:'common.messages.go_home') %> </a>
 </div>
 

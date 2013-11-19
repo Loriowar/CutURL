@@ -1,12 +1,10 @@
 require 'test_helper'
 
 class BigUrlTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
   test "invalid without real url" do
     r = BigUrl.new({vc_real_url: '', vc_short_url: ''})
-    assert !r.valid?, "Real url is not be validated"
+    assert_false r.valid?, "Real url is not be validated"
   end
 
   test "final url must contain http(s)" do
@@ -16,7 +14,7 @@ class BigUrlTest < ActiveSupport::TestCase
 
   test "incorrect url format" do
     r = BigUrl.create({vc_real_url: 'wwwoperru', vc_short_url: 'wrongurl'})
-    assert !r.valid?, "Record should not be created for incorrect data"
+    assert_false r.valid?, "Record should not be created for incorrect data"
   end
 
   test "record must have short name" do
@@ -26,12 +24,12 @@ class BigUrlTest < ActiveSupport::TestCase
 
   test "uniqueness of alias" do
     r = BigUrl.create({vc_real_url: 'http://www.google.ru', vc_short_url: 'goo'})
-    assert !r.valid?, "Record with same short name is prohibited"
+    assert_false r.valid?, "Record with same short name is prohibited"
   end
 
   test "recursion redirect" do
     r = BigUrl.new({vc_real_url: 'http://www.cuturl.com/recursion', vc_short_url: 'recursion'})
-    assert !r.valid?, "Checking of recursion isn't work"
+    assert_false r.valid?, "Checking of recursion isn't work"
   end
 
   test "spaces in url" do
