@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20131013065555) do
     t.date     "d_create"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.date     "d_expire",                  default: '2013-10-20'
+    t.date     "d_expire",                  default: '2013-11-28'
   end
 
 end

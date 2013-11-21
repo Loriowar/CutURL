@@ -40,9 +40,7 @@ class BigUrl < Base
 
     # Clear big_urls table
     def wipe
-      BigUrl.all.each do |rec|
-        rec.delete
-      end
+      BigUrl.destroy_all
     end
 
     # Delete expired records

@@ -27,5 +27,4 @@ class NotFoundIntegrationTest < ActionDispatch::IntegrationTest
     click_link "link_to_home"
     assert_match current_url, capybara_server_url , "Link to home redirect to somewhere else"
   end
-
 end
