@@ -8,7 +8,7 @@ class HomeController < BaseController
 
       unless @big_url.errors.any?
         # Fill notice with result url
-        flash.now[:notice] = 'http://' << (request.host == 'localhost' ? request.host_with_port : request.host) << '/' << @big_url.vc_short_url
+        flash.now[:notice] = construct_url_for_redirect(@big_url.vc_short_url)
         # Clear variable after success save
         @big_url = nil
       end

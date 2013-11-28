@@ -26,6 +26,7 @@ en:
     title: Welcome to CurURL service
     url_input: "Input url for cut:"
     url_alias: "Input short alias for url:"
+    expire_date: "Input lifetime for link:"
     submit: Cut
     additional_options: "Additional options..."
     check_alias_btn: Check alias
@@ -61,6 +62,8 @@ en:
       vc_short_url: Alias
       vc_rem: Comment
       d_create: Create date
+      d_expire: Expire date
+      d_expire_tag: Duration
 
   activerecord:
     errors:

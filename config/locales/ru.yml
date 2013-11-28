@@ -26,6 +26,7 @@ ru:
     title: Добро пожаловать в укорачиватель ссылок
     url_input: Ссылка для укорочения
     url_alias: Псевдоним для ссылки
+    expire_date: Время жизни ссылки
     submit: Укоротить
     additional_options: "Дополнительные параметры..."
     check_alias_btn: Проверить
@@ -61,6 +62,8 @@ ru:
       vc_short_url: Псевдоним для ссылки
       vc_rem: Комментарий
       d_create: Дата создания
+      d_expire: Дата удаления
+      d_expire_tag: Срок действия
 
   activerecord:
     errors:

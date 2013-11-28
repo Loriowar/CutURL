@@ -44,6 +44,16 @@
               </button>
             </td>
           </tr>
+          <tr class="input_row">
+            <td class="simple_label">
+              <%= f.label :expire_date, t('home.expire_date') %>
+            </td>
+            <td class="field">
+              <%= f.select :d_expire_tag,
+                           BigUrl.values_for_expire,
+                           :selected => params[:big_url].present? ? params[:big_url][:d_expire_tag] : "1W"%>
+            </td>
+          </tr>
         </table>
 
       </div>

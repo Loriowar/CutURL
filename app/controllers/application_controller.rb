@@ -5,13 +5,15 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale_from_subdomain
 
+  # Functions for identify locale
   def set_locale_from_params
     # Get locale from request parameters
     I18n.locale = params[:locale] || I18n.default_locale
   end
 
   def set_locale_from_subdomain
-    # Get locale from Subdomain Name (locale from params add for testing and for heroku)
+    # Get locale from Subdomain Name
+    # (locale from params add for testing and for heroku)
     I18n.locale = extract_locale_from_subdomain || params[:locale] || I18n.default_locale
   end
 
@@ -22,8 +24,18 @@ class ApplicationController < ActionController::Base
     end
   end
 
+
   def not_found
     render partial: 'not_found'
     # raise ActionController::RoutingError.new('Not Found')
   end
+
+
+  # Helpers for other controllers
+  def construct_url_for_redirect(short_name)
+    # Regexp needed for detect locale from subdomain, when server run locally
+    # (i.e. for work with links like "en.application.localhost:3000")
+    'http://' << (request.host =~ /localhost/ ? request.host_with_port : request.host) << '/' << short_name
+  end
+
 end

@@ -5,13 +5,17 @@ class BigUrl < Base
                   :vc_short_url,
                   :vc_rem,
                   :d_create,
-                  :d_expire
+                  :d_expire,
+                  :d_expire_tag
+
+  attr_accessor   :d_expire_tag
 
   after_initialize :init_default,
                    :remove_spaces
 
   before_save :prepare_alias,
-              :fix_real_url
+              :fix_real_url,
+              :fill_expire_date
 
   validates_presence_of :vc_real_url
 
@@ -62,6 +66,13 @@ class BigUrl < Base
       end
       short_name
     end
+
+    # Generate list with dates for select with expire date
+    def values_for_expire
+      dates_names = ["1 year", "1 month", "1 week", "1 day"]
+      dates_tag = ["1Y", "1M", "1W", "1D"]
+      dates_names.enum_for(:each_with_index).collect{|name, index| [name, dates_tag[index]]}
+    end
   end
 
 
@@ -111,10 +122,25 @@ class BigUrl < Base
     end
   end
 
+  def fill_expire_date
+    case self.d_expire_tag
+      when "1Y"
+        self.d_expire = DateTime.now + 1.year
+      when "1M"
+        self.d_expire = DateTime.now + 1.month
+      when "1W"
+        self.d_expire = DateTime.now + 1.week
+      when "1D"
+        self.d_expire = DateTime.now + 1.day
+      else
+        self.d_expire = DateTime.now + 1.week
+    end
+  end
+
   # Initialize default values for record
   def init_default
     self.d_create ||= DateTime.now
-    self.d_expire ||= DateTime.now + 1.week
+    #self.d_expire ||= DateTime.now + 1.week
   end
 
   # Remove all space charecters from real url
