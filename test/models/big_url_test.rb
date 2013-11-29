@@ -37,4 +37,18 @@ class BigUrlTest < ActiveSupport::TestCase
     assert_equal 'http://www.simple.org/', r.vc_real_url, "Real url musn't contain space charecter"
   end
 
+
+  #Expire date tests
+
+  # Few metaprogramming magic for avoid duplication of code
+  expire_dates = ["1Day", "1Week", "1Month", "1Year"]
+  expire_dates.each do |date_name|
+    class_eval do
+      test "set #{date_name} expire data throw expire data tag" do
+        r = BigUrl.create({vc_real_url: 'http://www.google.ru', vc_short_url: date_name, d_expire_tag: date_name[0..1]})
+        assert_equal DateTime.now.to_date + ("#{date_name}".to_i).send("#{date_name.downcase[1..-1]}"), r.d_expire.to_date, "Expire date must be +#{date_name.downcase} from now"
+      end
+    end
+  end
+
 end

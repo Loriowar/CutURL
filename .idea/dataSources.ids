@@ -32,17 +32,6 @@
       <column name="seq" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
     </table>
   </data-source>
-  <data-source source="LOCAL" name="Rails CutURL: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="9c04e919-845b-4100-b2de-b39a749419a2">
-    <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-    <jdbc-url>jdbc:postgresql://127.0.0.1:5432/cuturl_production</jdbc-url>
-    <user-name>foo</user-name>
-    <user-password>dfc8dfcbdfd8</user-password>
-    <libraries>
-      <library>
-        <url>file://</url>
-      </library>
-    </libraries>
-  </data-source>
   <data-source source="LOCAL" name="Rails CutURL: test" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="12432113-9d25-4a7c-b48e-c782f62bdf4d">
     <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
     <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
@@ -73,5 +62,16 @@
       <column name="name" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
       <column name="seq" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
     </table>
+  </data-source>
+  <data-source source="LOCAL" name="Rails CutURL: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="7311bd98-7cf2-49d8-a0ca-9eaa4e07d058">
+    <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+    <jdbc-url>jdbc:postgresql://127.0.0.1:5432/cuturl_production</jdbc-url>
+    <user-name>foo</user-name>
+    <user-password>dfc8dfcbdfd8</user-password>
+    <libraries>
+      <library>
+        <url>file://</url>
+      </library>
+    </libraries>
   </data-source>
 </component>

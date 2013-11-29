@@ -78,74 +78,80 @@ class BigUrl < Base
 
   # Object methods
 
-  # Set random alias for record
-  def prepare_alias
-    if !errors.any? && vc_short_url.blank?
-      self.vc_short_url = BigUrl.generate_short_name
-    end
-  end
+  # Callback methods
+  protected
 
-  # Set suffix for correct redirect
-  def fix_real_url
-    unless errors.any?
-      unless vc_real_url =~ /^http(s)?:\/\//
-        self.vc_real_url = "http://" << vc_real_url
+    # Set random alias for record
+    def prepare_alias
+      if !errors.any? && vc_short_url.blank?
+        self.vc_short_url = BigUrl.generate_short_name
       end
     end
-  end
 
-  def check_url_format
-    # Regex for common url
-    if vc_real_url =~ /^((http|https|ftp)\:\/\/)?[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\:[a-zA-Z0-9]*)?\/?([a-zA-Z0-9\-\._\?\,\'\/\\+\&\%\$\#\=\~])*$/ || vc_real_url.blank?
-      true
-    else
-      errors.add(:vc_real_url, I18n.t(:'errors.messages.wrong_format'))
-      false
+    # Set suffix for correct redirect
+    def fix_real_url
+      unless errors.any?
+        unless vc_real_url =~ /^http(s)?:\/\//
+          self.vc_real_url = "http://" << vc_real_url
+        end
+      end
     end
-  end
 
-  def check_alias_format
-    if vc_short_url.include? ' '
-      errors.add(:vc_short_url, I18n.t(:'errors.messages.contain_spaces'))
-      false
-    elsif vc_short_url =~ /[^a-zA-Z0-9]/
-      errors.add(:vc_short_url, I18n.t(:'errors.messages.contain_wrong_charecters'))
-      false
-    else
-      true
+    def fill_expire_date
+      case self.d_expire_tag
+        when "1Y"
+          self.d_expire = DateTime.now + 1.year
+        when "1M"
+          self.d_expire = DateTime.now + 1.month
+        when "1W"
+          self.d_expire = DateTime.now + 1.week
+        when "1D"
+          self.d_expire = DateTime.now + 1.day
+        else
+          self.d_expire = DateTime.now + 1.week
+      end
     end
-  end
 
-  def check_recursion
-    if vc_real_url.split('/').last == vc_short_url
-      errors.add(:empty, I18n.t(:'errors.messages.recursion_probability'))
+    # Initialize default values for record
+    def init_default
+      self.d_create ||= DateTime.now
+      #self.d_expire ||= DateTime.now + 1.week
     end
-  end
 
-  def fill_expire_date
-    case self.d_expire_tag
-      when "1Y"
-        self.d_expire = DateTime.now + 1.year
-      when "1M"
-        self.d_expire = DateTime.now + 1.month
-      when "1W"
-        self.d_expire = DateTime.now + 1.week
-      when "1D"
-        self.d_expire = DateTime.now + 1.day
+    # Remove all space charecters from real url
+    def remove_spaces
+      self.vc_real_url = vc_real_url.gsub(' ', '')
+    end
+
+  # Validate methods
+  public
+
+    def check_url_format
+      # Regex for common url
+      if vc_real_url =~ /^((http|https|ftp)\:\/\/)?[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\:[a-zA-Z0-9]*)?\/?([a-zA-Z0-9\-\._\?\,\'\/\\+\&\%\$\#\=\~])*$/ || vc_real_url.blank?
+        true
       else
-        self.d_expire = DateTime.now + 1.week
+        errors.add(:vc_real_url, I18n.t(:'errors.messages.wrong_format'))
+        false
+      end
     end
-  end
 
-  # Initialize default values for record
-  def init_default
-    self.d_create ||= DateTime.now
-    #self.d_expire ||= DateTime.now + 1.week
-  end
+    def check_alias_format
+      if vc_short_url.include? ' '
+        errors.add(:vc_short_url, I18n.t(:'errors.messages.contain_spaces'))
+        false
+      elsif vc_short_url =~ /[^a-zA-Z0-9]/
+        errors.add(:vc_short_url, I18n.t(:'errors.messages.contain_wrong_charecters'))
+        false
+      else
+        true
+      end
+    end
 
-  # Remove all space charecters from real url
-  def remove_spaces
-    self.vc_real_url = vc_real_url.gsub(' ', '')
-  end
+    def check_recursion
+      if vc_real_url.split('/').last == vc_short_url
+        errors.add(:empty, I18n.t(:'errors.messages.recursion_probability'))
+      end
+    end
 
 end

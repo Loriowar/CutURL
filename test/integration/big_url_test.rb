@@ -71,4 +71,8 @@ class BigUrlIntegrationTest < ActionDispatch::IntegrationTest
       assert has_css?(".border_red"), "Red highlight alias field doesn't work"
     end
   end
+
+  #test "Duration select field must influe on expire date" do
+  #TODO: write test
+  #end
 end
