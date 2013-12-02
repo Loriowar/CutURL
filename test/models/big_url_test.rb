@@ -9,7 +9,9 @@ class BigUrlTest < ActiveSupport::TestCase
 
   test "final url must contain http(s)" do
     r = BigUrl.create({vc_real_url: 'oper.ru', vc_short_url: 'oper'})
-    assert_match /^http:\/\//,  r.vc_real_url, "For correct redirect real url must begin from http(s)://"
+    assert_match /^http:\/\//,
+                 r.vc_real_url,
+                 "For correct redirect real url must begin from http(s)://"
   end
 
   test "incorrect url format" do
@@ -34,7 +36,9 @@ class BigUrlTest < ActiveSupport::TestCase
 
   test "spaces in url" do
     r = BigUrl.new({vc_real_url: ' http:// www.   simple.org/ ', vc_short_url: 'spacealias'})
-    assert_equal 'http://www.simple.org/', r.vc_real_url, "Real url musn't contain space charecter"
+    assert_equal 'http://www.simple.org/',
+                 r.vc_real_url,
+                 "Real url musn't contain space charecter"
   end
 
 
@@ -46,7 +50,9 @@ class BigUrlTest < ActiveSupport::TestCase
     class_eval do
       test "set #{date_name} expire data throw expire data tag" do
         r = BigUrl.create({vc_real_url: 'http://www.google.ru', vc_short_url: date_name, d_expire_tag: date_name[0..1]})
-        assert_equal DateTime.now.to_date + ("#{date_name}".to_i).send("#{date_name.downcase[1..-1]}"), r.d_expire.to_date, "Expire date must be +#{date_name.downcase} from now"
+        assert_equal DateTime.now.to_date + ("#{date_name}".to_i).send("#{date_name.downcase[1..-1]}"),
+                     r.d_expire.to_date,
+                     "Expire date must be +#{date_name.downcase} from now"
       end
     end
   end

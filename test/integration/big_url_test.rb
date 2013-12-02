@@ -72,7 +72,7 @@ class BigUrlIntegrationTest < ActionDispatch::IntegrationTest
     end
   end
 
-  #test "Duration select field must influe on expire date" do
+  #test "Duration select field must influence on expiry date" do
   #TODO: write test
   #end
 end
