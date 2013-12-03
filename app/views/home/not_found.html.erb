@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag "not_found", media: "all", "data-turbolinks-track" => true %>
+
 
 <div class="not_found hero-unit">
 <h1> <%= t(:'not_found.title') %> </h1>
@@ -6,7 +6,7 @@
 <h2> <%= t(:'not_found.advice') %> </h3>
 <a id="link_to_home"
    class="link_to_home btn btn-primary"
-   href="<%= url_for :root %>">
+   href="<%= url_for controller: :home, params: {locale: locale} %>">
   <i class="icon-white icon-arrow-left"></i> <%= t(:'common.messages.go_home') %> </a>
 </div>
 

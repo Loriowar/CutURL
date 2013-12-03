@@ -69,7 +69,9 @@ class BigUrl < Base
 
     # Generate list with dates for select with expire date
     def values_for_expire
-      dates_names = ["1 year", "1 month", "1 week", "1 day"]
+      # The sequence in dictionary is important
+      dates_names = I18n.t(:"periods.expire_dates").values
+      # TODO: get dates tag from dictionary to avoid dependency from local defining
       dates_tag = ["1Y", "1M", "1W", "1D"]
       dates_names.enum_for(:each_with_index).collect{|name, index| [name, dates_tag[index]]}
     end
@@ -99,6 +101,7 @@ class BigUrl < Base
 
     def fill_expire_date
       case self.d_expire_tag
+        # TODO: get dates tag from dictionary to avoid dependency from local defining
         when "1Y"
           self.d_expire = DateTime.now + 1.year
         when "1M"

@@ -75,3 +75,10 @@ en:
   locales:
     ru: "Русский"
     en: English
+
+  periods:
+    expire_dates:
+      1year: 1 year
+      1month: 1 month
+      1week: 1 week
+      1day: 1 day
