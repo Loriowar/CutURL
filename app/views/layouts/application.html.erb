@@ -8,8 +8,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="home_container">
-  <%= yield %>
-</div>
+  <div class="home_container">
+    <%= render partial: 'head_menu/locales/language_menu' %>
+
+    <%= yield %>
+  </div>
 </body>
 </html>

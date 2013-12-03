@@ -71,3 +71,7 @@ en:
         blank: can't be blank
         too_long: is too long (maximum is %{count} characters)
         taken: has already been taken
+
+  locales:
+    ru: "Русский"
+    en: English

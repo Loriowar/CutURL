@@ -1,0 +1,6 @@
+<div class="head_menu">
+  <% I18n.available_locales.each do |locale| %>
+    <%= render partial: 'head_menu/locales/language_link',
+               locals:  {locale_short_name: locale} %>
+  <% end %>
+</div>

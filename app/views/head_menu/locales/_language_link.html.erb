@@ -1,0 +1,9 @@
+<div class="locale_link">
+  <a id="<%= locale_short_name %>_local"
+     class="link"
+     href="<%= get_current_url_with_locale(locale_short_name) %>" >
+    <span>
+      <i class="flag flag-<%= locale_short_name %>"></i> <%= t("locales.#{locale_short_name}") %>
+    </span>
+  </a>
+</div>
