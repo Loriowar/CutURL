@@ -1,0 +1,16 @@
+%div{id: 'appTabs'}
+  %ul{class: 'resp-tabs-list'}
+    %li
+      = t(:'abbreviations.cut_url')
+    %li
+      = t(:'abbreviations.one_time_url')
+
+  %div{class: 'resp-tabs-container'}
+    %div
+      %h1
+        = t(:'home.title')
+      = render 'errors_explanation'
+      = render 'form'
+      = render 'link_notification'
+    %div
+      123

@@ -1,18 +1,18 @@
 <% message_present = @big_url.present? && @big_url.errors.any? %>
-<div class="errors_container"
-     id="errors_container">
-    <div class="errors_explanation alert alert-error<%= " hidden" unless message_present %>"
-         id="errors_explanation">
+<div class='errors_container'
+     id='errors_container'>
+    <div class="errors_explanation alert alert-error<%= ' hidden' unless message_present %>"
+         id='errors_explanation'>
         <% if message_present %>
           <h2><%= t(:'errors.title') %>:</h2>
           <%@big_url.errors.messages.reject{|key, val| val.blank?}.each do |obj_name, messages| %>
               <%messages.each do  |message| %>
                 <% if obj_name == :empty %>
-                  <li class="itemize">
+                  <li class='itemize'>
                     <%= message %>
                   </li>
                 <% else %>
-                  <li class="itemize">
+                  <li class='itemize'>
                     <%= t(:"big_urls_table.columns.#{obj_name}") << ' ' << message %>
                   </li>
                 <% end %>

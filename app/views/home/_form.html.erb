@@ -1,5 +1,5 @@
 <div class="main_form hero-unit" id="main_form">
-    <%= form_for(:big_url, :remote => true) do |f| %>
+    <%= form_for(:big_url, remote: true) do |f| %>
 
       <input name="authenticity_token"
              type="hidden"
@@ -80,7 +80,7 @@
     <% end %>
 
   <script>
-    <% #TODO make preaty class for change button %>
+    <% #TODO: make pretty class for change button %>
     bindClickEvent('check_alias_btn', 'big_url_vc_short_url');
     bindChangeEvent('big_url_vc_short_url');
   </script>

@@ -11,7 +11,7 @@ function bindClickEvent(btn_id, short_url_id) {
             );
         }
     });
-};
+}
 
 // TODO: make event on field in any case (now event fire only after remove focus)
 function bindChangeEvent(short_url_id) {
@@ -19,4 +19,4 @@ function bindChangeEvent(short_url_id) {
     jQuery(element_id).on('change', function() {
         jQuery(element_id).removeClass('border_red').removeClass('border_green');
     });
-};
+}

@@ -34,6 +34,13 @@ ru:
           vc_real_url: Ваша ссылка
           vc_short_url: Псевдоним
 
+  one_time_url:
+    title: Сервис одноразовых ссылок приветствует Вас!
+
+  abbreviations:
+    cut_url: CutURL
+    one_time_url: OneTimeURL
+
   common:
     messages:
       go_home: Вернуться на главную
@@ -48,7 +55,7 @@ ru:
 
   notice:
     title: Уведомлние
-    success_messge: Ссылка укорочена
+    success_message: Ссылка укорочена
 
   not_found:
     title: Ой-ёй-ёй!

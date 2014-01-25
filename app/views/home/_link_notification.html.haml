@@ -1,0 +1,9 @@
+%div{class: 'link_notification', id: 'link_notification'}
+  %div{class: "flash_notification alert alert-success #{' hide' if flash[:notice].blank?}",
+       id: 'flash_link_notification'}
+    -if flash[:notice].present?
+      %h3
+        = t(:'notice.success_message')
+      %ul
+        %li{class: 'itemize'}
+          = flash[:notice]

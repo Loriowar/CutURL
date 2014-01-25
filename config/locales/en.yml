@@ -23,7 +23,7 @@ en:
   hello: "Hello world"
 
   home:
-    title: Welcome to CurURL service
+    title: Welcome to CutURL service
     url_input: "Input url for cut:"
     url_alias: "Input short alias for url:"
     expire_date: "Input lifetime for link:"
@@ -33,6 +33,13 @@ en:
     placeholder:
       vc_real_url: Your URL
       vc_short_url: Your alias for URL
+
+  one_time_url:
+    title: Welcome to OneTimeURL service
+
+  abbreviations:
+    cut_url: CutURL
+    one_time_url: OneTimeURL
 
   common:
     messages:
@@ -48,7 +55,7 @@ en:
 
   notice:
     title: Notification
-    success_messge: Url successfully cut
+    success_message: Url successfully cut
 
   not_found:
     title: Oops!
