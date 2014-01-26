@@ -11,8 +11,11 @@ group :prodution do
   gem 'pg'
 end
 
-group :test do
+group :development, :test do
   gem 'sqlite3'
+end
+
+group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
@@ -28,7 +31,7 @@ gem 'activerecord'
 # Use for debug in development
 group :development do
   gem 'pry'
-  gem 'sqlite3'
+  gem 'better_errors'
 end
 
 # Use Resque for "cron" task
