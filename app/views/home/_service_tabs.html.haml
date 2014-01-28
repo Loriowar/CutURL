@@ -1,0 +1,13 @@
+%div{class: 'service_tabs'}
+  %div{id: 'serviceTabs'}
+    %ul{class: 'resp-tabs-list'}
+      %li{class: 'tab_gradient'}
+        = t(:'abbreviations.cut_url')
+      %li{class: 'tab_gradient'}
+        = t(:'abbreviations.one_time_url')
+
+    %div{class: 'resp-tabs-container'}
+      %div
+        = render 'cut_url_form'
+      %div
+        = render 'one_time_url_form'

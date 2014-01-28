@@ -38,7 +38,9 @@ h2.resp-accordion {
 
 .resp-tab-content {
     display: none;
-    padding: 15px;
+    /*padding: 15px;*/
+    background-color: #eeeeee;
+    background: linear-gradient(to bottom,  #ffffff 0%,#f1f1f1 60%, #eeeeee 100%);
 }
 
 .resp-tab-active {

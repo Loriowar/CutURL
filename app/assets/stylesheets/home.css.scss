@@ -97,3 +97,15 @@ input:focus {
 .hidden {
   display: none
 }
+
+.service_tabs {
+  width: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.tab_gradient {
+  background-color: #ffffff; // Old browsers
+//  background: linear-gradient(top, #ffffff 0%,#f1f1f1 30%,#e1e1e1 74%,#eeeeee 100%);
+  background: linear-gradient(to top,  #ffffff 0%,#f1f1f1 80%, #eeeeee 100%);
+}

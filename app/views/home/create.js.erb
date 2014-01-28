@@ -1,7 +1,7 @@
 // Update input form
 <% if params[:check_alias].blank? %>
     form_element = jQuery('#main_form');
-    form_element.replaceWith("<%= escape_javascript(render :partial => "form", object: @big_url) %>");
+    form_element.replaceWith("<%= escape_javascript(render :partial => "cut_url_form", object: @big_url) %>");
 
     // Update error message
     error_element = jQuery('#errors_container');
