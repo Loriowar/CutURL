@@ -22,7 +22,7 @@
 ru:
   hello: "Hello world"
 
-  home:
+  home_cut_url:
     title: Добро пожаловать в укорачиватель ссылок
     url_input: Ссылка для укорочения
     url_alias: Псевдоним для ссылки
@@ -33,6 +33,9 @@ ru:
     placeholder:
           vc_real_url: Ваша ссылка
           vc_short_url: Псевдоним
+
+  home_one_time_url:
+    title: Добро пожаловать в сервис одноразовых ссылок
 
   one_time_url:
     title: Сервис одноразовых ссылок приветствует Вас!

@@ -22,7 +22,7 @@
 en:
   hello: "Hello world"
 
-  home:
+  home_cut_url:
     title: Welcome to CutURL service
     url_input: "Input url for cut:"
     url_alias: "Input short alias for url:"
@@ -33,6 +33,9 @@ en:
     placeholder:
       vc_real_url: Your URL
       vc_short_url: Your alias for URL
+
+  home_one_time_url:
+    title: Welcome to OneTimeURL service
 
   one_time_url:
     title: Welcome to OneTimeURL service

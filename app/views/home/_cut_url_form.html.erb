@@ -12,11 +12,11 @@
       <table>
         <tr class="input_row">
           <td class="simple_label">
-            <%= f.label :url_input, t('home.url_input') %>
+            <%= f.label :url_input, t('home_cut_url.url_input') %>
           </td>
           <td class="field">
             <%= f.text_field :vc_real_url,
-                placeholder: t(:'home.placeholder.vc_real_url'),
+                placeholder: t(:'home_cut_url.placeholder.vc_real_url'),
                 size:        100,
                 value:       @big_url.present? ? @big_url.vc_real_url : ''%>
           </td>
@@ -31,11 +31,11 @@
         <table>
           <tr class="input_row">
             <td class="simple_label">
-              <%= f.label :url_alias, t('home.url_alias') %>
+              <%= f.label :url_alias, t('home_cut_url.url_alias') %>
             </td>
             <td class="field">
               <%= f.text_field :vc_short_url,
-                  placeholder: t(:'home.placeholder.vc_short_url'),
+                  placeholder: t(:'home_cut_url.placeholder.vc_short_url'),
                   size:        19,
                   value:       @big_url.present? ? @big_url.vc_short_url : '' %>
             </td>
@@ -43,13 +43,13 @@
               <button id="check_alias_btn"
                       class="btn btn-info"
                       type="button">
-                <%= t(:'home.check_alias_btn') %>
+                <%= t(:'home_cut_url.check_alias_btn') %>
               </button>
             </td>
           </tr>
           <tr class="input_row">
             <td class="simple_label">
-              <%= f.label :expire_date, t('home.expire_date') %>
+              <%= f.label :expire_date, t('home_cut_url.expire_date') %>
             </td>
             <td class="field">
               <%= f.select :d_expire_tag,
@@ -68,13 +68,13 @@
            onclick="return false;"
            href="#" >
           <span>
-            <%= t(:'home.additional_options') %>
+            <%= t(:'home_cut_url.additional_options') %>
           </span>
         </a>
       </div>
 
       <div class="actions">
-        <%= f.submit t('home.submit'), class: 'btn btn-primary' %>
+        <%= f.submit t('home_cut_url.submit'), class: 'btn btn-primary' %>
       </div>
 
     <% end %>

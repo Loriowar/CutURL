@@ -49,7 +49,7 @@ class BigUrl < Base
 
     # Delete expired records
     def delete_expired
-      BigUrl.where("d_expire < :cur_date", cur_date: DateTime.now).destroy_all
+      BigUrl.where('d_expire < :cur_date', cur_date: DateTime.now).destroy_all
     end
 
     # Simple alternative for SecureRandom
@@ -102,13 +102,13 @@ class BigUrl < Base
     def fill_expire_date
       case self.d_expire_tag
         # TODO: get dates tag from dictionary to avoid dependency from local defining
-        when "1Y"
+        when '1Y'
           self.d_expire = DateTime.now + 1.year
-        when "1M"
+        when '1M'
           self.d_expire = DateTime.now + 1.month
-        when "1W"
+        when '1W'
           self.d_expire = DateTime.now + 1.week
-        when "1D"
+        when '1D'
           self.d_expire = DateTime.now + 1.day
         else
           self.d_expire = DateTime.now + 1.week

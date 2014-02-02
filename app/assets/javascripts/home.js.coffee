@@ -8,16 +8,13 @@ jQuery(document).ready ->
     type: 'default' #Types: default, vertical, accordion
     width: 'auto' #auto or any width like 600px
     fit: true # 100% fit in a container
-    # Until now we have one h1 per page
-    activate: () ->
-      title = jQuery('#mainTitle')
-      if title.hasClass('cut_url_title')
-        # TODO: here must be I18n function for js
-        title.html('OneTimeURL')
-        title.removeClass('cut_url_title')
-        title.addClass('one_time_url_title')
-      else if title.hasClass('one_time_url_title')
-        # TODO: here must be I18n function for js
-        title.html('CutURL')
-        title.removeClass('one_time_url_title')
-        title.addClass('cut_url_title')
+    activate: change_title_action
+
+change_title_action = () ->
+  #TODO: find how change tabs name
+  active_tab = jQuery('.resp-tab-active')
+  title = jQuery('#mainTitle')
+  if active_tab.hasClass('cut_url_tail')
+    title.html(I18n.t('home_cut_url.title'))
+  else if active_tab.hasClass('one_time_url_tail')
+    title.html(I18n.t('home_one_time_url.title'))

@@ -22,6 +22,7 @@ end
 
 # Use I18n for locales
 gem 'i18n'
+gem 'i18n-js'
 
 # For using attr_accessible
 gem 'protected_attributes'

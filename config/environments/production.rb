@@ -26,8 +26,9 @@ CutURL::Application.configure do
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
-  # Required for Heroku
-  config.assets.initialize_on_precompile = false
+  # False required for Heroku, but we use 'heroku labs:enable user-env-compile'
+  # I18n-js require true
+  config.assets.initialize_on_precompile = true
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false

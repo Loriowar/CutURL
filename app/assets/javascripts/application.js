@@ -16,3 +16,9 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap
+//= require i18n
+//= require i18n/translations
+
+
+I18n.defaultLocale = 'en';
+I18n.locale = 'en';
