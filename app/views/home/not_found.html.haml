@@ -1,0 +1,12 @@
+%div{class: 'not_found hero-unit'}
+  %h1
+    = t(:'not_found.title')
+  %h3
+    = t(:'not_found.message')
+  %h2
+    = t(:'not_found.advice')
+  %a{id: 'link_to_home',
+     class: 'link_to_home btn btn-primary',
+     href: "#{url_for(controller: :home, params: {locale: locale})}"}
+    %i{class: 'icon-white icon-arrow-left'}
+    = t(:'common.messages.go_home')
