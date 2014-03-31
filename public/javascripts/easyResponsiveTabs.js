@@ -110,7 +110,7 @@
                 }
 
                 //fire tabactivate event after set active tab
-                $($respTabs.find('.resp-tab-item')[tabNum]).trigger('tabactivate', $($respTabs.find('.resp-tab-item')[tabNum]));
+                $($respTabs.find('.resp-tab-item')[tabNum]).trigger('tabactivate');
 
                 //Tab Click action function
                 $respTabs.find("[role=tab]").each(function () {
